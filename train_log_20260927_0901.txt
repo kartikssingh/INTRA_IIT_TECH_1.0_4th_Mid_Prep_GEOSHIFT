@@ -1,0 +1,754 @@
+[00:00:00] GeoShift overnight training — 9h budget (thermal-limited)
+[00:00:00] Device: cuda
+[00:00:00] GPU: NVIDIA GeForce RTX 4060 Laptop GPU  VRAM=7.62GB
+[00:00:00] [watchdog] Started. Limit=82°C, check every 10s (2 consecutive hits required).
+[00:00:00] train_df (33939, 2)  test_df (9891, 1)
+[00:00:04] in_channels=5  num_classes=6
+[00:00:04]   fold 0: val regions = ['R00']
+[00:00:04]   fold 1: val regions = ['R05', 'R06', 'R07', 'R13']
+[00:00:04]   fold 2: val regions = ['R10', 'R11', 'R12']
+[00:00:04]   fold 3: val regions = ['R01', 'R08', 'R09']
+[00:00:04]   fold 4: val regions = ['R03', 'R04', 'R18']
+[00:00:04] 
+######################################################################
+[00:00:04] # STAGE 1: ResNet-50 (main horse)
+[00:00:04] ######################################################################
+[00:00:04] 
+[resnet] ====== FOLD 0 / 5 ======
+[00:00:05] ======================================================================
+[00:00:05] [resnet FOLD 0] train=21237 val=12702 bs=32 epochs=12
+[00:00:05] [GPU resnet-f0-built] alloc=0.09GB reserved=0.12GB total=7.62GB
+[00:00:05] [weights] counts=[3592.0, 4093.0, 2637.0, 2854.0, 7991.0, 70.0]
+[00:00:05] [weights] final =[0.4975, 0.4661, 0.5807, 0.5582, 0.3336, 3.0]
+[00:00:05] [resnet FOLD 0] backbone frozen for 1 epoch(s)
+[00:00:05] [resnet FOLD 0] batches/epoch=663 val_batches=397
+[00:00:14] [resnet FOLD 0] ep 1/12 b 100/663 loss=0.8028
+[00:00:20] [resnet FOLD 0] ep 1/12 b 200/663 loss=0.7208
+[00:00:27] [resnet FOLD 0] ep 1/12 b 300/663 loss=0.8012
+[00:00:34] [resnet FOLD 0] ep 1/12 b 400/663 loss=0.6064
+[00:00:41] [resnet FOLD 0] ep 1/12 b 500/663 loss=0.6206
+[00:00:48] [resnet FOLD 0] ep 1/12 b 600/663 loss=0.6538
+[00:01:19] [resnet FOLD 0] ep 1/12 loss=0.7394 val_f1=0.5677  <-- BEST
+[00:01:19] [resnet FOLD 0] backbone UNFROZEN at epoch 2
+[00:01:41] [resnet FOLD 0] ep 2/12 b 100/663 loss=0.5047
+[00:02:01] [resnet FOLD 0] ep 2/12 b 200/663 loss=0.4823
+[00:02:21] [resnet FOLD 0] ep 2/12 b 300/663 loss=0.3822
+[00:02:41] [resnet FOLD 0] ep 2/12 b 400/663 loss=0.4144
+[00:03:01] [resnet FOLD 0] ep 2/12 b 500/663 loss=0.4512
+[00:03:22] [resnet FOLD 0] ep 2/12 b 600/663 loss=0.4854
+[00:04:01] [resnet FOLD 0] ep 2/12 loss=0.5031 val_f1=0.6947  <-- BEST
+[00:04:22] [resnet FOLD 0] ep 3/12 b 100/663 loss=0.4529
+[00:04:42] [resnet FOLD 0] ep 3/12 b 200/663 loss=0.4437
+[00:05:02] [resnet FOLD 0] ep 3/12 b 300/663 loss=0.4796
+[00:05:22] [resnet FOLD 0] ep 3/12 b 400/663 loss=0.4445
+[00:05:43] [resnet FOLD 0] ep 3/12 b 500/663 loss=0.4135
+[00:06:03] [resnet FOLD 0] ep 3/12 b 600/663 loss=0.4501
+[00:06:43] [resnet FOLD 0] ep 3/12 loss=0.4584 val_f1=0.6793
+[00:07:03] [resnet FOLD 0] ep 4/12 b 100/663 loss=0.4283
+[00:07:24] [resnet FOLD 0] ep 4/12 b 200/663 loss=0.4508
+[00:07:44] [resnet FOLD 0] ep 4/12 b 300/663 loss=0.4378
+[00:08:05] [resnet FOLD 0] ep 4/12 b 400/663 loss=0.3786
+[00:08:25] [resnet FOLD 0] ep 4/12 b 500/663 loss=0.4464
+[00:08:45] [resnet FOLD 0] ep 4/12 b 600/663 loss=0.4443
+[00:09:25] [resnet FOLD 0] ep 4/12 loss=0.4428 val_f1=0.7325  <-- BEST
+[00:09:46] [resnet FOLD 0] ep 5/12 b 100/663 loss=0.4812
+[00:10:06] [resnet FOLD 0] ep 5/12 b 200/663 loss=0.4429
+[00:10:26] [resnet FOLD 0] ep 5/12 b 300/663 loss=0.3678
+[00:10:47] [resnet FOLD 0] ep 5/12 b 400/663 loss=0.4144
+[00:11:07] [resnet FOLD 0] ep 5/12 b 500/663 loss=0.4511
+[00:11:28] [resnet FOLD 0] ep 5/12 b 600/663 loss=0.4151
+[00:12:08] [resnet FOLD 0] ep 5/12 loss=0.4365 val_f1=0.7105
+[00:12:28] [resnet FOLD 0] ep 6/12 b 100/663 loss=0.4407
+[00:12:49] [resnet FOLD 0] ep 6/12 b 200/663 loss=0.4631
+[00:13:09] [resnet FOLD 0] ep 6/12 b 300/663 loss=0.4481
+[00:13:30] [resnet FOLD 0] ep 6/12 b 400/663 loss=0.4324
+[00:13:50] [resnet FOLD 0] ep 6/12 b 500/663 loss=0.4473
+[00:14:11] [resnet FOLD 0] ep 6/12 b 600/663 loss=0.4150
+[00:14:51] [resnet FOLD 0] ep 6/12 loss=0.4328 val_f1=0.7377  <-- BEST
+[00:15:11] [resnet FOLD 0] ep 7/12 b 100/663 loss=0.4481
+[00:15:32] [resnet FOLD 0] ep 7/12 b 200/663 loss=0.4072
+[00:15:52] [resnet FOLD 0] ep 7/12 b 300/663 loss=0.4408
+[00:16:12] [resnet FOLD 0] ep 7/12 b 400/663 loss=0.5224
+[00:16:33] [resnet FOLD 0] ep 7/12 b 500/663 loss=0.4213
+[00:16:53] [resnet FOLD 0] ep 7/12 b 600/663 loss=0.4420
+[00:17:33] [resnet FOLD 0] ep 7/12 loss=0.4279 val_f1=0.7437  <-- BEST
+[00:17:54] [resnet FOLD 0] ep 8/12 b 100/663 loss=0.4307
+[00:18:14] [resnet FOLD 0] ep 8/12 b 200/663 loss=0.4468
+[00:18:35] [resnet FOLD 0] ep 8/12 b 300/663 loss=0.4276
+[00:18:55] [resnet FOLD 0] ep 8/12 b 400/663 loss=0.4537
+[00:19:16] [resnet FOLD 0] ep 8/12 b 500/663 loss=0.4429
+[00:19:36] [resnet FOLD 0] ep 8/12 b 600/663 loss=0.4147
+[00:20:16] [resnet FOLD 0] ep 8/12 loss=0.4254 val_f1=0.7240
+[00:20:37] [resnet FOLD 0] ep 9/12 b 100/663 loss=0.4294
+[00:20:57] [resnet FOLD 0] ep 9/12 b 200/663 loss=0.4184
+[00:21:18] [resnet FOLD 0] ep 9/12 b 300/663 loss=0.4485
+[00:21:38] [resnet FOLD 0] ep 9/12 b 400/663 loss=0.4144
+[00:21:59] [resnet FOLD 0] ep 9/12 b 500/663 loss=0.3638
+[00:22:19] [resnet FOLD 0] ep 9/12 b 600/663 loss=0.4252
+[00:22:59] [resnet FOLD 0] ep 9/12 loss=0.4238 val_f1=0.7429
+[00:23:20] [resnet FOLD 0] ep 10/12 b 100/663 loss=0.4262
+[00:23:40] [resnet FOLD 0] ep 10/12 b 200/663 loss=0.4367
+[00:24:01] [resnet FOLD 0] ep 10/12 b 300/663 loss=0.4493
+[00:24:21] [resnet FOLD 0] ep 10/12 b 400/663 loss=0.4135
+[00:24:42] [resnet FOLD 0] ep 10/12 b 500/663 loss=0.4324
+[00:25:02] [resnet FOLD 0] ep 10/12 b 600/663 loss=0.3647
+[00:25:42] [resnet FOLD 0] ep 10/12 loss=0.4225 val_f1=0.7258
+[00:26:03] [resnet FOLD 0] ep 11/12 b 100/663 loss=0.4048
+[00:26:23] [resnet FOLD 0] ep 11/12 b 200/663 loss=0.4390
+[00:26:44] [resnet FOLD 0] ep 11/12 b 300/663 loss=0.4104
+[00:27:04] [resnet FOLD 0] ep 11/12 b 400/663 loss=0.4154
+[00:27:25] [resnet FOLD 0] ep 11/12 b 500/663 loss=0.4268
+[00:27:45] [resnet FOLD 0] ep 11/12 b 600/663 loss=0.4757
+[00:28:25] [resnet FOLD 0] ep 11/12 loss=0.4221 val_f1=0.7334
+[00:28:46] [resnet FOLD 0] ep 12/12 b 100/663 loss=0.4112
+[00:29:06] [resnet FOLD 0] ep 12/12 b 200/663 loss=0.4195
+[00:29:27] [resnet FOLD 0] ep 12/12 b 300/663 loss=0.4355
+[00:29:47] [resnet FOLD 0] ep 12/12 b 400/663 loss=0.4128
+[00:30:08] [resnet FOLD 0] ep 12/12 b 500/663 loss=0.4203
+[00:30:28] [resnet FOLD 0] ep 12/12 b 600/663 loss=0.4342
+[00:31:08] [resnet FOLD 0] ep 12/12 loss=0.4215 val_f1=0.7339
+[00:31:08] [resnet FOLD 0] DONE. best_val_f1=0.7437
+[00:31:08] [resnet] Fold 0 F1 = 0.7437
+[00:34:16] 
+[resnet] ====== FOLD 1 / 5 ======
+[00:34:18] ======================================================================
+[00:34:18] [resnet FOLD 1] train=28751 val=5188 bs=32 epochs=12
+[00:34:18] [GPU resnet-f1-built] alloc=0.10GB reserved=0.12GB total=7.62GB
+[00:34:18] [weights] counts=[7407.0, 95.0, 4478.0, 2882.0, 10738.0, 3151.0]
+[00:34:18] [weights] final =[0.3978, 3.0, 0.5116, 0.6377, 0.3304, 0.6099]
+[00:34:18] [resnet FOLD 1] backbone frozen for 1 epoch(s)
+[00:34:18] [resnet FOLD 1] batches/epoch=898 val_batches=163
+[00:34:26] [resnet FOLD 1] ep 1/12 b 100/898 loss=0.7715
+[00:34:33] [resnet FOLD 1] ep 1/12 b 200/898 loss=0.6901
+[00:34:40] [resnet FOLD 1] ep 1/12 b 300/898 loss=0.8455
+[00:34:47] [resnet FOLD 1] ep 1/12 b 400/898 loss=0.8177
+[00:34:54] [resnet FOLD 1] ep 1/12 b 500/898 loss=0.6614
+[00:35:01] [resnet FOLD 1] ep 1/12 b 600/898 loss=0.6263
+[00:35:08] [resnet FOLD 1] ep 1/12 b 700/898 loss=0.6339
+[00:35:15] [resnet FOLD 1] ep 1/12 b 800/898 loss=0.6152
+[00:35:34] [resnet FOLD 1] ep 1/12 loss=0.7479 val_f1=0.2125  <-- BEST
+[00:35:34] [resnet FOLD 1] backbone UNFROZEN at epoch 2
+[00:35:54] [resnet FOLD 1] ep 2/12 b 100/898 loss=0.4907
+[00:36:15] [resnet FOLD 1] ep 2/12 b 200/898 loss=0.5035
+[00:36:35] [resnet FOLD 1] ep 2/12 b 300/898 loss=0.5743
+[00:36:56] [resnet FOLD 1] ep 2/12 b 400/898 loss=0.4465
+[00:37:16] [resnet FOLD 1] ep 2/12 b 500/898 loss=0.4481
+[00:37:37] [resnet FOLD 1] ep 2/12 b 600/898 loss=0.5158
+[00:37:57] [resnet FOLD 1] ep 2/12 b 700/898 loss=0.4676
+[00:38:19] [resnet FOLD 1] ep 2/12 b 800/898 loss=0.4417
+[00:38:51] [resnet FOLD 1] ep 2/12 loss=0.5410 val_f1=0.2422  <-- BEST
+[00:39:12] [resnet FOLD 1] ep 3/12 b 100/898 loss=0.4760
+[00:39:32] [resnet FOLD 1] ep 3/12 b 200/898 loss=0.4719
+[00:39:53] [resnet FOLD 1] ep 3/12 b 300/898 loss=0.4437
+[00:40:13] [resnet FOLD 1] ep 3/12 b 400/898 loss=0.4501
+[00:40:34] [resnet FOLD 1] ep 3/12 b 500/898 loss=0.4564
+[00:40:54] [resnet FOLD 1] ep 3/12 b 600/898 loss=0.4627
+[00:41:15] [resnet FOLD 1] ep 3/12 b 700/898 loss=0.4605
+[00:41:35] [resnet FOLD 1] ep 3/12 b 800/898 loss=0.5355
+[00:42:07] [resnet FOLD 1] ep 3/12 loss=0.4851 val_f1=0.2482  <-- BEST
+[00:42:28] [resnet FOLD 1] ep 4/12 b 100/898 loss=0.4649
+[00:42:48] [resnet FOLD 1] ep 4/12 b 200/898 loss=0.4714
+[00:43:09] [resnet FOLD 1] ep 4/12 b 300/898 loss=0.4694
+[00:43:29] [resnet FOLD 1] ep 4/12 b 400/898 loss=0.4581
+[00:43:49] [resnet FOLD 1] ep 4/12 b 500/898 loss=0.4988
+[00:44:10] [resnet FOLD 1] ep 4/12 b 600/898 loss=0.4455
+[00:44:30] [resnet FOLD 1] ep 4/12 b 700/898 loss=0.4877
+[00:44:51] [resnet FOLD 1] ep 4/12 b 800/898 loss=0.4331
+[00:45:22] [resnet FOLD 1] ep 4/12 loss=0.4679 val_f1=0.2503  <-- BEST
+[00:45:43] [resnet FOLD 1] ep 5/12 b 100/898 loss=0.4261
+[00:46:04] [resnet FOLD 1] ep 5/12 b 200/898 loss=0.4298
+[00:46:24] [resnet FOLD 1] ep 5/12 b 300/898 loss=0.4595
+[00:46:45] [resnet FOLD 1] ep 5/12 b 400/898 loss=0.3699
+[00:47:05] [resnet FOLD 1] ep 5/12 b 500/898 loss=0.4756
+[00:47:25] [resnet FOLD 1] ep 5/12 b 600/898 loss=0.4705
+[00:47:46] [resnet FOLD 1] ep 5/12 b 700/898 loss=0.4725
+[00:48:06] [resnet FOLD 1] ep 5/12 b 800/898 loss=0.5768
+[00:48:38] [resnet FOLD 1] ep 5/12 loss=0.4551 val_f1=0.2638  <-- BEST
+[00:48:59] [resnet FOLD 1] ep 6/12 b 100/898 loss=0.3907
+[00:49:20] [resnet FOLD 1] ep 6/12 b 200/898 loss=0.4556
+[00:49:41] [resnet FOLD 1] ep 6/12 b 300/898 loss=0.3758
+[00:50:02] [resnet FOLD 1] ep 6/12 b 400/898 loss=0.4320
+[00:50:23] [resnet FOLD 1] ep 6/12 b 500/898 loss=0.4256
+[00:50:44] [resnet FOLD 1] ep 6/12 b 600/898 loss=0.5498
+[00:51:04] [resnet FOLD 1] ep 6/12 b 700/898 loss=0.4609
+[00:51:25] [resnet FOLD 1] ep 6/12 b 800/898 loss=0.4329
+[00:51:56] [resnet FOLD 1] ep 6/12 loss=0.4498 val_f1=0.2446
+[00:52:17] [resnet FOLD 1] ep 7/12 b 100/898 loss=0.4299
+[00:52:37] [resnet FOLD 1] ep 7/12 b 200/898 loss=0.4374
+[00:52:58] [resnet FOLD 1] ep 7/12 b 300/898 loss=0.4382
+[00:53:18] [resnet FOLD 1] ep 7/12 b 400/898 loss=0.3606
+[00:53:39] [resnet FOLD 1] ep 7/12 b 500/898 loss=0.3670
+[00:53:59] [resnet FOLD 1] ep 7/12 b 600/898 loss=0.4305
+[00:54:20] [resnet FOLD 1] ep 7/12 b 700/898 loss=0.4348
+[00:54:41] [resnet FOLD 1] ep 7/12 b 800/898 loss=0.4244
+[00:55:13] [resnet FOLD 1] ep 7/12 loss=0.4453 val_f1=0.2503
+[00:55:34] [resnet FOLD 1] ep 8/12 b 100/898 loss=0.4682
+[00:55:54] [resnet FOLD 1] ep 8/12 b 200/898 loss=0.4453
+[00:56:15] [resnet FOLD 1] ep 8/12 b 300/898 loss=0.4233
+[00:56:35] [resnet FOLD 1] ep 8/12 b 400/898 loss=0.4683
+[00:56:56] [resnet FOLD 1] ep 8/12 b 500/898 loss=0.4457
+[00:57:16] [resnet FOLD 1] ep 8/12 b 600/898 loss=0.4615
+[00:57:36] [resnet FOLD 1] ep 8/12 b 700/898 loss=0.4384
+[00:57:57] [resnet FOLD 1] ep 8/12 b 800/898 loss=0.3678
+[00:58:28] [resnet FOLD 1] ep 8/12 loss=0.4402 val_f1=0.2548
+[00:58:49] [resnet FOLD 1] ep 9/12 b 100/898 loss=0.4502
+[00:59:10] [resnet FOLD 1] ep 9/12 b 200/898 loss=0.4232
+[00:59:30] [resnet FOLD 1] ep 9/12 b 300/898 loss=0.4312
+[00:59:50] [resnet FOLD 1] ep 9/12 b 400/898 loss=0.4458
+[01:00:11] [resnet FOLD 1] ep 9/12 b 500/898 loss=0.4362
+[01:00:31] [resnet FOLD 1] ep 9/12 b 600/898 loss=0.4592
+[01:00:52] [resnet FOLD 1] ep 9/12 b 700/898 loss=0.4537
+[01:01:12] [resnet FOLD 1] ep 9/12 b 800/898 loss=0.4711
+[01:01:44] [resnet FOLD 1] ep 9/12 loss=0.4383 val_f1=0.2458
+[01:02:04] [resnet FOLD 1] ep 10/12 b 100/898 loss=0.4438
+[01:02:25] [resnet FOLD 1] ep 10/12 b 200/898 loss=0.3953
+[01:02:45] [resnet FOLD 1] ep 10/12 b 300/898 loss=0.4354
+[01:03:06] [resnet FOLD 1] ep 10/12 b 400/898 loss=0.4450
+[01:03:26] [resnet FOLD 1] ep 10/12 b 500/898 loss=0.4422
+[01:03:47] [resnet FOLD 1] ep 10/12 b 600/898 loss=0.4235
+[01:04:07] [resnet FOLD 1] ep 10/12 b 700/898 loss=0.4495
+[01:04:28] [resnet FOLD 1] ep 10/12 b 800/898 loss=0.4366
+[01:04:59] [resnet FOLD 1] ep 10/12 loss=0.4361 val_f1=0.2984  <-- BEST
+[01:05:20] [resnet FOLD 1] ep 11/12 b 100/898 loss=0.4233
+[01:05:41] [resnet FOLD 1] ep 11/12 b 200/898 loss=0.4576
+[01:06:01] [resnet FOLD 1] ep 11/12 b 300/898 loss=0.4418
+[01:06:21] [resnet FOLD 1] ep 11/12 b 400/898 loss=0.4294
+[01:06:42] [resnet FOLD 1] ep 11/12 b 500/898 loss=0.4227
+[01:07:02] [resnet FOLD 1] ep 11/12 b 600/898 loss=0.4230
+[01:07:23] [resnet FOLD 1] ep 11/12 b 700/898 loss=0.4373
+[01:07:43] [resnet FOLD 1] ep 11/12 b 800/898 loss=0.4454
+[01:08:15] [resnet FOLD 1] ep 11/12 loss=0.4352 val_f1=0.2902
+[01:08:36] [resnet FOLD 1] ep 12/12 b 100/898 loss=0.4727
+[01:08:56] [resnet FOLD 1] ep 12/12 b 200/898 loss=0.4497
+[01:09:16] [resnet FOLD 1] ep 12/12 b 300/898 loss=0.4091
+[01:09:37] [resnet FOLD 1] ep 12/12 b 400/898 loss=0.4355
+[01:09:57] [resnet FOLD 1] ep 12/12 b 500/898 loss=0.4507
+[01:10:18] [resnet FOLD 1] ep 12/12 b 600/898 loss=0.4544
+[01:10:38] [resnet FOLD 1] ep 12/12 b 700/898 loss=0.4618
+[01:10:59] [resnet FOLD 1] ep 12/12 b 800/898 loss=0.3675
+[01:11:32] [resnet FOLD 1] ep 12/12 loss=0.4347 val_f1=0.2522
+[01:11:32] [resnet FOLD 1] DONE. best_val_f1=0.2984
+[01:11:32] [resnet] Fold 1 F1 = 0.2984
+[01:13:38] 
+[resnet] ====== FOLD 2 / 5 ======
+[01:13:38] ======================================================================
+[01:13:38] [resnet FOLD 2] train=28525 val=5414 bs=32 epochs=12
+[01:13:39] [GPU resnet-f2-built] alloc=0.10GB reserved=0.12GB total=7.62GB
+[01:13:39] [weights] counts=[4998.0, 4185.0, 4647.0, 2506.0, 9063.0, 3126.0]
+[01:13:39] [weights] final =[0.9161, 1.0012, 0.9501, 1.2938, 0.6803, 1.1584]
+[01:13:39] [resnet FOLD 2] backbone frozen for 1 epoch(s)
+[01:13:39] [resnet FOLD 2] batches/epoch=891 val_batches=170
+[01:13:46] [resnet FOLD 2] ep 1/12 b 100/891 loss=0.5801
+[01:13:53] [resnet FOLD 2] ep 1/12 b 200/891 loss=0.6363
+[01:14:00] [resnet FOLD 2] ep 1/12 b 300/891 loss=0.5641
+[01:14:07] [resnet FOLD 2] ep 1/12 b 400/891 loss=0.6462
+[01:14:14] [resnet FOLD 2] ep 1/12 b 500/891 loss=0.4102
+[01:14:21] [resnet FOLD 2] ep 1/12 b 600/891 loss=0.3576
+[01:14:28] [resnet FOLD 2] ep 1/12 b 700/891 loss=0.5338
+[01:14:35] [resnet FOLD 2] ep 1/12 b 800/891 loss=0.4894
+[01:14:54] [resnet FOLD 2] ep 1/12 loss=0.5794 val_f1=0.5824  <-- BEST
+[01:14:54] [resnet FOLD 2] backbone UNFROZEN at epoch 2
+[01:15:14] [resnet FOLD 2] ep 2/12 b 100/891 loss=0.4787
+[01:15:35] [resnet FOLD 2] ep 2/12 b 200/891 loss=0.3144
+[01:15:57] [resnet FOLD 2] ep 2/12 b 300/891 loss=0.4047
+[01:16:18] [resnet FOLD 2] ep 2/12 b 400/891 loss=0.3045
+[01:16:40] [resnet FOLD 2] ep 2/12 b 500/891 loss=0.3347
+[01:17:00] [resnet FOLD 2] ep 2/12 b 600/891 loss=0.3244
+[01:17:21] [resnet FOLD 2] ep 2/12 b 700/891 loss=0.4498
+[01:17:41] [resnet FOLD 2] ep 2/12 b 800/891 loss=0.3679
+[01:18:12] [resnet FOLD 2] ep 2/12 loss=0.3489 val_f1=0.6977  <-- BEST
+[01:18:32] [resnet FOLD 2] ep 3/12 b 100/891 loss=0.3311
+[01:18:53] [resnet FOLD 2] ep 3/12 b 200/891 loss=0.3127
+[01:19:13] [resnet FOLD 2] ep 3/12 b 300/891 loss=0.2704
+[01:19:34] [resnet FOLD 2] ep 3/12 b 400/891 loss=0.2951
+[01:19:54] [resnet FOLD 2] ep 3/12 b 500/891 loss=0.2892
+[01:20:15] [resnet FOLD 2] ep 3/12 b 600/891 loss=0.3058
+[01:20:35] [resnet FOLD 2] ep 3/12 b 700/891 loss=0.2615
+[01:20:56] [resnet FOLD 2] ep 3/12 b 800/891 loss=0.2716
+[01:21:26] [resnet FOLD 2] ep 3/12 loss=0.2994 val_f1=0.7004  <-- BEST
+[01:21:47] [resnet FOLD 2] ep 4/12 b 100/891 loss=0.2843
+[01:22:07] [resnet FOLD 2] ep 4/12 b 200/891 loss=0.3053
+[01:22:28] [resnet FOLD 2] ep 4/12 b 300/891 loss=0.2752
+[01:22:48] [resnet FOLD 2] ep 4/12 b 400/891 loss=0.2722
+[01:23:09] [resnet FOLD 2] ep 4/12 b 500/891 loss=0.2803
+[01:23:29] [resnet FOLD 2] ep 4/12 b 600/891 loss=0.2775
+[01:23:50] [resnet FOLD 2] ep 4/12 b 700/891 loss=0.2814
+[01:24:10] [resnet FOLD 2] ep 4/12 b 800/891 loss=0.2706
+[01:24:41] [resnet FOLD 2] ep 4/12 loss=0.2863 val_f1=0.7090  <-- BEST
+[01:25:01] [resnet FOLD 2] ep 5/12 b 100/891 loss=0.2613
+[01:25:22] [resnet FOLD 2] ep 5/12 b 200/891 loss=0.2778
+[01:25:42] [resnet FOLD 2] ep 5/12 b 300/891 loss=0.2761
+[01:26:03] [resnet FOLD 2] ep 5/12 b 400/891 loss=0.2818
+[01:26:23] [resnet FOLD 2] ep 5/12 b 500/891 loss=0.2530
+[01:26:44] [resnet FOLD 2] ep 5/12 b 600/891 loss=0.2612
+[01:27:04] [resnet FOLD 2] ep 5/12 b 700/891 loss=0.2763
+[01:27:25] [resnet FOLD 2] ep 5/12 b 800/891 loss=0.2826
+[01:27:55] [resnet FOLD 2] ep 5/12 loss=0.2785 val_f1=0.7087
+[01:28:16] [resnet FOLD 2] ep 6/12 b 100/891 loss=0.2549
+[01:28:36] [resnet FOLD 2] ep 6/12 b 200/891 loss=0.2759
+[01:28:58] [resnet FOLD 2] ep 6/12 b 300/891 loss=0.2665
+[01:29:19] [resnet FOLD 2] ep 6/12 b 400/891 loss=0.2433
+[01:29:40] [resnet FOLD 2] ep 6/12 b 500/891 loss=0.3583
+[01:30:01] [resnet FOLD 2] ep 6/12 b 600/891 loss=0.2649
+[01:30:22] [resnet FOLD 2] ep 6/12 b 700/891 loss=0.2830
+[01:30:43] [resnet FOLD 2] ep 6/12 b 800/891 loss=0.2687
+[01:31:14] [resnet FOLD 2] ep 6/12 loss=0.2733 val_f1=0.7117  <-- BEST
+[01:31:35] [resnet FOLD 2] ep 7/12 b 100/891 loss=0.2865
+[01:31:55] [resnet FOLD 2] ep 7/12 b 200/891 loss=0.2697
+[01:32:16] [resnet FOLD 2] ep 7/12 b 300/891 loss=0.2638
+[01:32:36] [resnet FOLD 2] ep 7/12 b 400/891 loss=0.2718
+[01:32:57] [resnet FOLD 2] ep 7/12 b 500/891 loss=0.2784
+[01:33:17] [resnet FOLD 2] ep 7/12 b 600/891 loss=0.2734
+[01:33:38] [resnet FOLD 2] ep 7/12 b 700/891 loss=0.2648
+[01:34:00] [resnet FOLD 2] ep 7/12 b 800/891 loss=0.2689
+[01:34:32] [resnet FOLD 2] ep 7/12 loss=0.2691 val_f1=0.7118  <-- BEST
+[01:34:53] [resnet FOLD 2] ep 8/12 b 100/891 loss=0.2596
+[01:35:13] [resnet FOLD 2] ep 8/12 b 200/891 loss=0.2777
+[01:35:34] [resnet FOLD 2] ep 8/12 b 300/891 loss=0.2784
+[01:35:54] [resnet FOLD 2] ep 8/12 b 400/891 loss=0.2732
+[01:36:15] [resnet FOLD 2] ep 8/12 b 500/891 loss=0.2587
+[01:36:36] [resnet FOLD 2] ep 8/12 b 600/891 loss=0.2662
+[01:36:57] [resnet FOLD 2] ep 8/12 b 700/891 loss=0.2613
+[01:37:18] [resnet FOLD 2] ep 8/12 b 800/891 loss=0.2865
+[01:37:49] [resnet FOLD 2] ep 8/12 loss=0.2669 val_f1=0.7163  <-- BEST
+[01:38:10] [resnet FOLD 2] ep 9/12 b 100/891 loss=0.2689
+[01:38:30] [resnet FOLD 2] ep 9/12 b 200/891 loss=0.2693
+[01:38:51] [resnet FOLD 2] ep 9/12 b 300/891 loss=0.2493
+[01:39:11] [resnet FOLD 2] ep 9/12 b 400/891 loss=0.2636
+[01:39:32] [resnet FOLD 2] ep 9/12 b 500/891 loss=0.2697
+[01:39:53] [resnet FOLD 2] ep 9/12 b 600/891 loss=0.2845
+[01:40:15] [resnet FOLD 2] ep 9/12 b 700/891 loss=0.2745
+[01:40:36] [resnet FOLD 2] ep 9/12 b 800/891 loss=0.2578
+[01:41:07] [resnet FOLD 2] ep 9/12 loss=0.2655 val_f1=0.7307  <-- BEST
+[01:41:28] [resnet FOLD 2] ep 10/12 b 100/891 loss=0.2683
+[01:41:49] [resnet FOLD 2] ep 10/12 b 200/891 loss=0.2619
+[01:42:09] [resnet FOLD 2] ep 10/12 b 300/891 loss=0.2531
+[01:42:30] [resnet FOLD 2] ep 10/12 b 400/891 loss=0.2589
+[01:42:50] [resnet FOLD 2] ep 10/12 b 500/891 loss=0.2565
+[01:43:11] [resnet FOLD 2] ep 10/12 b 600/891 loss=0.2756
+[01:43:31] [resnet FOLD 2] ep 10/12 b 700/891 loss=0.2535
+[01:43:52] [resnet FOLD 2] ep 10/12 b 800/891 loss=0.2552
+[01:44:22] [resnet FOLD 2] ep 10/12 loss=0.2641 val_f1=0.7190
+[01:44:43] [resnet FOLD 2] ep 11/12 b 100/891 loss=0.2759
+[01:45:03] [resnet FOLD 2] ep 11/12 b 200/891 loss=0.2670
+[01:45:24] [resnet FOLD 2] ep 11/12 b 300/891 loss=0.2611
+[01:45:44] [resnet FOLD 2] ep 11/12 b 400/891 loss=0.2659
+[01:46:05] [resnet FOLD 2] ep 11/12 b 500/891 loss=0.2641
+[01:46:25] [resnet FOLD 2] ep 11/12 b 600/891 loss=0.2650
+[01:46:46] [resnet FOLD 2] ep 11/12 b 700/891 loss=0.2675
+[01:47:06] [resnet FOLD 2] ep 11/12 b 800/891 loss=0.2699
+[01:47:37] [resnet FOLD 2] ep 11/12 loss=0.2632 val_f1=0.7137
+[01:47:57] [resnet FOLD 2] ep 12/12 b 100/891 loss=0.2540
+[01:48:18] [resnet FOLD 2] ep 12/12 b 200/891 loss=0.2683
+[01:48:38] [resnet FOLD 2] ep 12/12 b 300/891 loss=0.2625
+[01:48:59] [resnet FOLD 2] ep 12/12 b 400/891 loss=0.2610
+[01:49:21] [resnet FOLD 2] ep 12/12 b 500/891 loss=0.2680
+[01:49:42] [resnet FOLD 2] ep 12/12 b 600/891 loss=0.2680
+[01:50:03] [resnet FOLD 2] ep 12/12 b 700/891 loss=0.2540
+[01:50:24] [resnet FOLD 2] ep 12/12 b 800/891 loss=0.2903
+[01:50:55] [resnet FOLD 2] ep 12/12 loss=0.2629 val_f1=0.7175
+[01:50:55] [resnet FOLD 2] DONE. best_val_f1=0.7307
+[01:50:55] [resnet] Fold 2 F1 = 0.7307
+[01:53:02] 
+[resnet] ====== FOLD 3 / 5 ======
+[01:53:03] ======================================================================
+[01:53:03] [resnet FOLD 3] train=28724 val=5215 bs=32 epochs=12
+[01:53:04] [GPU resnet-f3-built] alloc=0.10GB reserved=0.12GB total=7.62GB
+[01:53:04] [weights] counts=[6521.0, 4182.0, 4645.0, 1992.0, 8278.0, 3106.0]
+[01:53:04] [weights] final =[0.7916, 0.9885, 0.938, 1.4323, 0.7026, 1.147]
+[01:53:04] [resnet FOLD 3] backbone frozen for 1 epoch(s)
+[01:53:04] [resnet FOLD 3] batches/epoch=897 val_batches=163
+[01:53:11] [resnet FOLD 3] ep 1/12 b 100/897 loss=0.6254
+[01:53:18] [resnet FOLD 3] ep 1/12 b 200/897 loss=0.5987
+[01:53:25] [resnet FOLD 3] ep 1/12 b 300/897 loss=0.5988
+[01:53:32] [resnet FOLD 3] ep 1/12 b 400/897 loss=0.5485
+[01:53:39] [resnet FOLD 3] ep 1/12 b 500/897 loss=0.5887
+[01:53:46] [resnet FOLD 3] ep 1/12 b 600/897 loss=0.4039
+[01:53:53] [resnet FOLD 3] ep 1/12 b 700/897 loss=0.4436
+[01:54:00] [resnet FOLD 3] ep 1/12 b 800/897 loss=0.4872
+[01:54:19] [resnet FOLD 3] ep 1/12 loss=0.5869 val_f1=0.5775  <-- BEST
+[01:54:19] [resnet FOLD 3] backbone UNFROZEN at epoch 2
+[01:54:40] [resnet FOLD 3] ep 2/12 b 100/897 loss=0.3431
+[01:55:00] [resnet FOLD 3] ep 2/12 b 200/897 loss=0.4893
+[01:55:21] [resnet FOLD 3] ep 2/12 b 300/897 loss=0.3047
+[01:55:41] [resnet FOLD 3] ep 2/12 b 400/897 loss=0.3585
+[01:56:02] [resnet FOLD 3] ep 2/12 b 500/897 loss=0.4569
+[01:56:22] [resnet FOLD 3] ep 2/12 b 600/897 loss=0.4215
+[01:56:43] [resnet FOLD 3] ep 2/12 b 700/897 loss=0.2940
+[01:57:03] [resnet FOLD 3] ep 2/12 b 800/897 loss=0.3136
+[01:57:35] [resnet FOLD 3] ep 2/12 loss=0.3533 val_f1=0.6800  <-- BEST
+[01:57:55] [resnet FOLD 3] ep 3/12 b 100/897 loss=0.2834
+[01:58:16] [resnet FOLD 3] ep 3/12 b 200/897 loss=0.4139
+[01:58:36] [resnet FOLD 3] ep 3/12 b 300/897 loss=0.3322
+[01:58:57] [resnet FOLD 3] ep 3/12 b 400/897 loss=0.3576
+[01:59:17] [resnet FOLD 3] ep 3/12 b 500/897 loss=0.3278
+[01:59:38] [resnet FOLD 3] ep 3/12 b 600/897 loss=0.2775
+[01:59:58] [resnet FOLD 3] ep 3/12 b 700/897 loss=0.2775
+[02:00:19] [resnet FOLD 3] ep 3/12 b 800/897 loss=0.3613
+[02:00:50] [resnet FOLD 3] ep 3/12 loss=0.3068 val_f1=0.6759
+[02:01:11] [resnet FOLD 3] ep 4/12 b 100/897 loss=0.2730
+[02:01:31] [resnet FOLD 3] ep 4/12 b 200/897 loss=0.2840
+[02:01:52] [resnet FOLD 3] ep 4/12 b 300/897 loss=0.2984
+[02:02:12] [resnet FOLD 3] ep 4/12 b 400/897 loss=0.2830
+[02:02:33] [resnet FOLD 3] ep 4/12 b 500/897 loss=0.3292
+[02:02:53] [resnet FOLD 3] ep 4/12 b 600/897 loss=0.2807
+[02:03:14] [resnet FOLD 3] ep 4/12 b 700/897 loss=0.2826
+[02:03:34] [resnet FOLD 3] ep 4/12 b 800/897 loss=0.2857
+[02:04:06] [resnet FOLD 3] ep 4/12 loss=0.2919 val_f1=0.6860  <-- BEST
+[02:04:26] [resnet FOLD 3] ep 5/12 b 100/897 loss=0.2620
+[02:04:47] [resnet FOLD 3] ep 5/12 b 200/897 loss=0.2843
+[02:05:07] [resnet FOLD 3] ep 5/12 b 300/897 loss=0.2776
+[02:05:28] [resnet FOLD 3] ep 5/12 b 400/897 loss=0.2662
+[02:05:48] [resnet FOLD 3] ep 5/12 b 500/897 loss=0.2931
+[02:06:09] [resnet FOLD 3] ep 5/12 b 600/897 loss=0.2861
+[02:06:29] [resnet FOLD 3] ep 5/12 b 700/897 loss=0.4017
+[02:06:50] [resnet FOLD 3] ep 5/12 b 800/897 loss=0.2833
+[02:07:21] [resnet FOLD 3] ep 5/12 loss=0.2851 val_f1=0.7484  <-- BEST
+[02:07:42] [resnet FOLD 3] ep 6/12 b 100/897 loss=0.2779
+[02:08:02] [resnet FOLD 3] ep 6/12 b 200/897 loss=0.2727
+[02:08:23] [resnet FOLD 3] ep 6/12 b 300/897 loss=0.2718
+[02:08:43] [resnet FOLD 3] ep 6/12 b 400/897 loss=0.2852
+[02:09:04] [resnet FOLD 3] ep 6/12 b 500/897 loss=0.2812
+[02:09:24] [resnet FOLD 3] ep 6/12 b 600/897 loss=0.2541
+[02:09:44] [resnet FOLD 3] ep 6/12 b 700/897 loss=0.2997
+[02:10:05] [resnet FOLD 3] ep 6/12 b 800/897 loss=0.2674
+[02:10:36] [resnet FOLD 3] ep 6/12 loss=0.2783 val_f1=0.7188
+[02:10:57] [resnet FOLD 3] ep 7/12 b 100/897 loss=0.2606
+[02:11:17] [resnet FOLD 3] ep 7/12 b 200/897 loss=0.2866
+[02:11:38] [resnet FOLD 3] ep 7/12 b 300/897 loss=0.2635
+[02:11:58] [resnet FOLD 3] ep 7/12 b 400/897 loss=0.2726
+[02:12:19] [resnet FOLD 3] ep 7/12 b 500/897 loss=0.2633
+[02:12:39] [resnet FOLD 3] ep 7/12 b 600/897 loss=0.2625
+[02:13:00] [resnet FOLD 3] ep 7/12 b 700/897 loss=0.2685
+[02:13:20] [resnet FOLD 3] ep 7/12 b 800/897 loss=0.2717
+[02:13:52] [resnet FOLD 3] ep 7/12 loss=0.2754 val_f1=0.7403
+[02:14:12] [resnet FOLD 3] ep 8/12 b 100/897 loss=0.2873
+[02:14:33] [resnet FOLD 3] ep 8/12 b 200/897 loss=0.2923
+[02:14:53] [resnet FOLD 3] ep 8/12 b 300/897 loss=0.2659
+[02:15:14] [resnet FOLD 3] ep 8/12 b 400/897 loss=0.2437
+[02:15:35] [resnet FOLD 3] ep 8/12 b 500/897 loss=0.2506
+[02:15:56] [resnet FOLD 3] ep 8/12 b 600/897 loss=0.3176
+[02:16:17] [resnet FOLD 3] ep 8/12 b 700/897 loss=0.2706
+[02:16:38] [resnet FOLD 3] ep 8/12 b 800/897 loss=0.2658
+[02:17:10] [resnet FOLD 3] ep 8/12 loss=0.2728 val_f1=0.7471
+[02:17:31] [resnet FOLD 3] ep 9/12 b 100/897 loss=0.2599
+[02:17:51] [resnet FOLD 3] ep 9/12 b 200/897 loss=0.2591
+[02:18:11] [resnet FOLD 3] ep 9/12 b 300/897 loss=0.2663
+[02:18:32] [resnet FOLD 3] ep 9/12 b 400/897 loss=0.2512
+[02:18:52] [resnet FOLD 3] ep 9/12 b 500/897 loss=0.2535
+[02:19:13] [resnet FOLD 3] ep 9/12 b 600/897 loss=0.2628
+[02:19:33] [resnet FOLD 3] ep 9/12 b 700/897 loss=0.2619
+[02:19:54] [resnet FOLD 3] ep 9/12 b 800/897 loss=0.2755
+[02:20:25] [resnet FOLD 3] ep 9/12 loss=0.2702 val_f1=0.7484  <-- BEST
+[02:20:46] [resnet FOLD 3] ep 10/12 b 100/897 loss=0.2768
+[02:21:06] [resnet FOLD 3] ep 10/12 b 200/897 loss=0.2683
+[02:21:27] [resnet FOLD 3] ep 10/12 b 300/897 loss=0.2553
+[02:21:47] [resnet FOLD 3] ep 10/12 b 400/897 loss=0.2636
+[02:22:08] [resnet FOLD 3] ep 10/12 b 500/897 loss=0.2812
+[02:22:28] [resnet FOLD 3] ep 10/12 b 600/897 loss=0.2741
+[02:22:49] [resnet FOLD 3] ep 10/12 b 700/897 loss=0.2754
+[02:23:10] [resnet FOLD 3] ep 10/12 b 800/897 loss=0.2855
+[02:23:41] [resnet FOLD 3] ep 10/12 loss=0.2689 val_f1=0.7205
+[02:24:02] [resnet FOLD 3] ep 11/12 b 100/897 loss=0.2658
+[02:24:23] [resnet FOLD 3] ep 11/12 b 200/897 loss=0.2712
+[02:24:43] [resnet FOLD 3] ep 11/12 b 300/897 loss=0.2417
+[02:25:04] [resnet FOLD 3] ep 11/12 b 400/897 loss=0.2674
+[02:25:24] [resnet FOLD 3] ep 11/12 b 500/897 loss=0.2544
+[02:25:45] [resnet FOLD 3] ep 11/12 b 600/897 loss=0.2677
+[02:26:05] [resnet FOLD 3] ep 11/12 b 700/897 loss=0.2619
+[02:26:26] [resnet FOLD 3] ep 11/12 b 800/897 loss=0.2606
+[02:26:57] [resnet FOLD 3] ep 11/12 loss=0.2681 val_f1=0.7343
+[02:27:17] [resnet FOLD 3] ep 12/12 b 100/897 loss=0.2643
+[02:27:38] [resnet FOLD 3] ep 12/12 b 200/897 loss=0.2837
+[02:27:58] [resnet FOLD 3] ep 12/12 b 300/897 loss=0.2547
+[02:28:19] [resnet FOLD 3] ep 12/12 b 400/897 loss=0.2814
+[02:28:40] [resnet FOLD 3] ep 12/12 b 500/897 loss=0.2751
+[02:29:02] [resnet FOLD 3] ep 12/12 b 600/897 loss=0.2689
+[02:29:23] [resnet FOLD 3] ep 12/12 b 700/897 loss=0.2658
+[02:29:44] [resnet FOLD 3] ep 12/12 b 800/897 loss=0.2631
+[02:30:16] [resnet FOLD 3] ep 12/12 loss=0.2679 val_f1=0.7258
+[02:30:16] [resnet FOLD 3] DONE. best_val_f1=0.7484
+[02:30:16] [resnet] Fold 3 F1 = 0.7484
+[02:32:22] 
+[resnet] ====== FOLD 4 / 5 ======
+[02:32:22] ======================================================================
+[02:32:22] [resnet FOLD 4] train=28519 val=5420 bs=32 epochs=12
+[02:32:22] [GPU resnet-f4-built] alloc=0.10GB reserved=0.12GB total=7.62GB
+[02:32:22] [weights] counts=[7142.0, 4185.0, 2413.0, 1342.0, 10286.0, 3151.0]
+[02:32:22] [weights] final =[0.6918, 0.9038, 1.1903, 1.596, 0.5765, 1.0416]
+[02:32:22] [resnet FOLD 4] backbone frozen for 1 epoch(s)
+[02:32:22] [resnet FOLD 4] batches/epoch=891 val_batches=170
+[02:32:30] [resnet FOLD 4] ep 1/12 b 100/891 loss=0.7367
+[02:32:37] [resnet FOLD 4] ep 1/12 b 200/891 loss=0.6266
+[02:32:44] [resnet FOLD 4] ep 1/12 b 300/891 loss=0.5867
+[02:32:51] [resnet FOLD 4] ep 1/12 b 400/891 loss=0.4741
+[02:32:58] [resnet FOLD 4] ep 1/12 b 500/891 loss=0.4855
+[02:33:05] [resnet FOLD 4] ep 1/12 b 600/891 loss=0.4881
+[02:33:12] [resnet FOLD 4] ep 1/12 b 700/891 loss=0.6089
+[02:33:19] [resnet FOLD 4] ep 1/12 b 800/891 loss=0.5397
+[02:33:38] [resnet FOLD 4] ep 1/12 loss=0.6151 val_f1=0.3721  <-- BEST
+[02:33:38] [resnet FOLD 4] backbone UNFROZEN at epoch 2
+[02:33:58] [resnet FOLD 4] ep 2/12 b 100/891 loss=0.3753
+[02:34:19] [resnet FOLD 4] ep 2/12 b 200/891 loss=0.3983
+[02:34:39] [resnet FOLD 4] ep 2/12 b 300/891 loss=0.3868
+[02:35:00] [resnet FOLD 4] ep 2/12 b 400/891 loss=0.3895
+[02:35:20] [resnet FOLD 4] ep 2/12 b 500/891 loss=0.3338
+[02:35:41] [resnet FOLD 4] ep 2/12 b 600/891 loss=0.4109
+[02:36:02] [resnet FOLD 4] ep 2/12 b 700/891 loss=0.3699
+[02:36:24] [resnet FOLD 4] ep 2/12 b 800/891 loss=0.3380
+[02:36:55] [resnet FOLD 4] ep 2/12 loss=0.3792 val_f1=0.5657  <-- BEST
+[02:37:16] [resnet FOLD 4] ep 3/12 b 100/891 loss=0.2880
+[02:37:36] [resnet FOLD 4] ep 3/12 b 200/891 loss=0.3483
+[02:37:57] [resnet FOLD 4] ep 3/12 b 300/891 loss=0.3224
+[02:38:17] [resnet FOLD 4] ep 3/12 b 400/891 loss=0.2837
+[02:38:37] [resnet FOLD 4] ep 3/12 b 500/891 loss=0.3170
+[02:38:58] [resnet FOLD 4] ep 3/12 b 600/891 loss=0.3268
+[02:39:18] [resnet FOLD 4] ep 3/12 b 700/891 loss=0.4149
+[02:39:39] [resnet FOLD 4] ep 3/12 b 800/891 loss=0.3214
+[02:40:09] [resnet FOLD 4] ep 3/12 loss=0.3294 val_f1=0.4977
+[02:40:30] [resnet FOLD 4] ep 4/12 b 100/891 loss=0.3271
+[02:40:51] [resnet FOLD 4] ep 4/12 b 200/891 loss=0.3318
+[02:41:11] [resnet FOLD 4] ep 4/12 b 300/891 loss=0.3917
+[02:41:33] [resnet FOLD 4] ep 4/12 b 400/891 loss=0.2932
+[02:41:55] [resnet FOLD 4] ep 4/12 b 500/891 loss=0.3037
+[02:42:16] [resnet FOLD 4] ep 4/12 b 600/891 loss=0.3163
+[02:42:37] [resnet FOLD 4] ep 4/12 b 700/891 loss=0.2973
+[02:42:57] [resnet FOLD 4] ep 4/12 b 800/891 loss=0.3133
+[02:43:28] [resnet FOLD 4] ep 4/12 loss=0.3170 val_f1=0.6686  <-- BEST
+[02:43:49] [resnet FOLD 4] ep 5/12 b 100/891 loss=0.3079
+[02:44:09] [resnet FOLD 4] ep 5/12 b 200/891 loss=0.2883
+[02:44:30] [resnet FOLD 4] ep 5/12 b 300/891 loss=0.3082
+[02:44:50] [resnet FOLD 4] ep 5/12 b 400/891 loss=0.3279
+[02:45:10] [resnet FOLD 4] ep 5/12 b 500/891 loss=0.2755
+[02:45:31] [resnet FOLD 4] ep 5/12 b 600/891 loss=0.3058
+[02:45:51] [resnet FOLD 4] ep 5/12 b 700/891 loss=0.3106
+[02:46:12] [resnet FOLD 4] ep 5/12 b 800/891 loss=0.2915
+[02:46:42] [resnet FOLD 4] ep 5/12 loss=0.3086 val_f1=0.5528
+[02:47:03] [resnet FOLD 4] ep 6/12 b 100/891 loss=0.3082
+[02:47:24] [resnet FOLD 4] ep 6/12 b 200/891 loss=0.3239
+[02:47:44] [resnet FOLD 4] ep 6/12 b 300/891 loss=0.2706
+[02:48:05] [resnet FOLD 4] ep 6/12 b 400/891 loss=0.3069
+[02:48:25] [resnet FOLD 4] ep 6/12 b 500/891 loss=0.2916
+[02:48:46] [resnet FOLD 4] ep 6/12 b 600/891 loss=0.3193
+[02:49:06] [resnet FOLD 4] ep 6/12 b 700/891 loss=0.3086
+[02:49:27] [resnet FOLD 4] ep 6/12 b 800/891 loss=0.2822
+[02:49:57] [resnet FOLD 4] ep 6/12 loss=0.3039 val_f1=0.5724
+[02:50:18] [resnet FOLD 4] ep 7/12 b 100/891 loss=0.3185
+[02:50:38] [resnet FOLD 4] ep 7/12 b 200/891 loss=0.2766
+[02:50:59] [resnet FOLD 4] ep 7/12 b 300/891 loss=0.3042
+[02:51:19] [resnet FOLD 4] ep 7/12 b 400/891 loss=0.2983
+[02:51:40] [resnet FOLD 4] ep 7/12 b 500/891 loss=0.3191
+[02:52:00] [resnet FOLD 4] ep 7/12 b 600/891 loss=0.2944
+[02:52:21] [resnet FOLD 4] ep 7/12 b 700/891 loss=0.2846
+[02:52:41] [resnet FOLD 4] ep 7/12 b 800/891 loss=0.3171
+[02:53:12] [resnet FOLD 4] ep 7/12 loss=0.3007 val_f1=0.5576
+[02:53:32] [resnet FOLD 4] ep 8/12 b 100/891 loss=0.2819
+[02:53:53] [resnet FOLD 4] ep 8/12 b 200/891 loss=0.3071
+[02:54:13] [resnet FOLD 4] ep 8/12 b 300/891 loss=0.3133
+[02:54:34] [resnet FOLD 4] ep 8/12 b 400/891 loss=0.2742
+[02:54:54] [resnet FOLD 4] ep 8/12 b 500/891 loss=0.3172
+[02:55:15] [resnet FOLD 4] ep 8/12 b 600/891 loss=0.2789
+[02:55:35] [resnet FOLD 4] ep 8/12 b 700/891 loss=0.2679
+[02:55:56] [resnet FOLD 4] ep 8/12 b 800/891 loss=0.2932
+[02:56:26] [resnet FOLD 4] ep 8/12 loss=0.2984 val_f1=0.5566
+[02:56:47] [resnet FOLD 4] ep 9/12 b 100/891 loss=0.2953
+[02:57:07] [resnet FOLD 4] ep 9/12 b 200/891 loss=0.3116
+[02:57:28] [resnet FOLD 4] ep 9/12 b 300/891 loss=0.2999
+[02:57:48] [resnet FOLD 4] ep 9/12 b 400/891 loss=0.3096
+[02:58:09] [resnet FOLD 4] ep 9/12 b 500/891 loss=0.2958
+[02:58:29] [resnet FOLD 4] ep 9/12 b 600/891 loss=0.2839
+[02:58:50] [resnet FOLD 4] ep 9/12 b 700/891 loss=0.2872
+[02:59:10] [resnet FOLD 4] ep 9/12 b 800/891 loss=0.3051
+[02:59:41] [resnet FOLD 4] ep 9/12 loss=0.2963 val_f1=0.5596
+[03:00:01] [resnet FOLD 4] ep 10/12 b 100/891 loss=0.3182
+[03:00:22] [resnet FOLD 4] ep 10/12 b 200/891 loss=0.2744
+[03:00:42] [resnet FOLD 4] ep 10/12 b 300/891 loss=0.3098
+[03:01:03] [resnet FOLD 4] ep 10/12 b 400/891 loss=0.2995
+[03:01:23] [resnet FOLD 4] ep 10/12 b 500/891 loss=0.2810
+[03:01:44] [resnet FOLD 4] ep 10/12 b 600/891 loss=0.3005
+[03:02:04] [resnet FOLD 4] ep 10/12 b 700/891 loss=0.3237
+[03:02:25] [resnet FOLD 4] ep 10/12 b 800/891 loss=0.3795
+[03:02:55] [resnet FOLD 4] ep 10/12 loss=0.2956 val_f1=0.5579
+[03:03:16] [resnet FOLD 4] ep 11/12 b 100/891 loss=0.3174
+[03:03:36] [resnet FOLD 4] ep 11/12 b 200/891 loss=0.2681
+[03:03:57] [resnet FOLD 4] ep 11/12 b 300/891 loss=0.2860
+[03:04:17] [resnet FOLD 4] ep 11/12 b 400/891 loss=0.3051
+[03:04:38] [resnet FOLD 4] ep 11/12 b 500/891 loss=0.2877
+[03:04:58] [resnet FOLD 4] ep 11/12 b 600/891 loss=0.3011
+[03:05:19] [resnet FOLD 4] ep 11/12 b 700/891 loss=0.3010
+[03:05:39] [resnet FOLD 4] ep 11/12 b 800/891 loss=0.2861
+[03:06:10] [resnet FOLD 4] ep 11/12 loss=0.2951 val_f1=0.5508
+[03:06:30] [resnet FOLD 4] ep 12/12 b 100/891 loss=0.2952
+[03:06:51] [resnet FOLD 4] ep 12/12 b 200/891 loss=0.2886
+[03:07:11] [resnet FOLD 4] ep 12/12 b 300/891 loss=0.3139
+[03:07:32] [resnet FOLD 4] ep 12/12 b 400/891 loss=0.2832
+[03:07:52] [resnet FOLD 4] ep 12/12 b 500/891 loss=0.2996
+[03:08:13] [resnet FOLD 4] ep 12/12 b 600/891 loss=0.3240
+[03:08:33] [resnet FOLD 4] ep 12/12 b 700/891 loss=0.3158
+[03:08:54] [resnet FOLD 4] ep 12/12 b 800/891 loss=0.3305
+[03:09:24] [resnet FOLD 4] ep 12/12 loss=0.2946 val_f1=0.5606
+[03:09:24] [resnet FOLD 4] DONE. best_val_f1=0.6686
+[03:09:24] [resnet] Fold 4 F1 = 0.6686
+[03:11:32] 
+[resnet] Fold F1s: [0.7437, 0.2984, 0.7307, 0.7484, 0.6686]
+[03:11:32] [resnet] Mean CV macro F1: 0.6380 (± 0.1722)
+[03:11:32] [stage1] Wrote submission_resnet50_only.csv (safety net)
+[03:11:32] 
+######################################################################
+[03:11:32] # STAGE 2: DINOv2 ViT-S/14 (FROZEN backbone + linear head)
+[03:11:32] ######################################################################
+[03:11:32] 
+[dinov2] ====== FOLD 0 / 5 ======
+[03:11:32] ======================================================================
+[03:11:32] [dinov2 FOLD 0] train=21237 val=12702 bs=32 epochs=6
+[03:11:32] [dinov2] Loading facebookresearch/dinov2 → dinov2_vits14 ...
+/home/kartik/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/kartik/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/kartik/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Downloading: "https://github.com/facebookresearch/dinov2/zipball/main" to /home/kartik/.cache/torch/hub/main.zip
+Downloading: "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth" to /home/kartik/.cache/torch/hub/checkpoints/dinov2_vits14_pretrain.pth
+  0%|          | 0.00/84.2M [00:00<?, ?B/s]  0%|          | 128k/84.2M [00:00<01:13, 1.19MB/s]  1%|          | 640k/84.2M [00:00<00:26, 3.29MB/s]  2%|▏         | 1.50M/84.2M [00:00<00:15, 5.74MB/s]  3%|▎         | 2.50M/84.2M [00:00<00:11, 7.26MB/s]  5%|▍         | 3.88M/84.2M [00:00<00:08, 9.55MB/s]  6%|▌         | 5.25M/84.2M [00:00<00:07, 11.1MB/s]  8%|▊         | 6.50M/84.2M [00:00<00:07, 11.5MB/s] 10%|▉         | 8.00M/84.2M [00:00<00:06, 12.5MB/s] 11%|█         | 9.38M/84.2M [00:00<00:06, 12.8MB/s] 13%|█▎        | 11.0M/84.2M [00:01<00:05, 13.8MB/s] 15%|█▍        | 12.5M/84.2M [00:01<00:05, 14.4MB/s] 17%|█▋        | 14.1M/84.2M [00:01<00:04, 14.9MB/s] 19%|█▊        | 15.6M/84.2M [00:01<00:04, 15.0MB/s] 20%|██        | 17.2M/84.2M [00:01<00:04, 15.3MB/s] 22%|██▏       | 18.9M/84.2M [00:01<00:04, 15.5MB/s] 24%|██▍       | 20.4M/84.2M [00:01<00:04, 14.8MB/s] 26%|██▌       | 21.9M/84.2M [00:01<00:04, 13.2MB/s] 28%|██▊       | 23.2M/84.2M [00:01<00:04, 13.3MB/s] 29%|██▉       | 24.6M/84.2M [00:02<00:04, 13.5MB/s] 31%|███       | 26.0M/84.2M [00:02<00:04, 13.8MB/s] 33%|███▎      | 27.5M/84.2M [00:02<00:04, 14.2MB/s] 34%|███▍      | 29.0M/84.2M [00:02<00:03, 14.5MB/s] 36%|███▌      | 30.5M/84.2M [00:02<00:03, 14.8MB/s] 38%|███▊      | 32.0M/84.2M [00:02<00:03, 14.6MB/s] 40%|███▉      | 33.5M/84.2M [00:02<00:03, 14.6MB/s] 42%|████▏     | 35.0M/84.2M [00:02<00:03, 14.8MB/s] 43%|████▎     | 36.5M/84.2M [00:02<00:03, 14.6MB/s] 45%|████▌     | 38.0M/84.2M [00:03<00:03, 14.1MB/s] 47%|████▋     | 39.5M/84.2M [00:03<00:03, 14.0MB/s] 49%|████▊     | 40.9M/84.2M [00:03<00:03, 13.8MB/s] 50%|█████     | 42.4M/84.2M [00:03<00:03, 14.2MB/s] 52%|█████▏    | 44.0M/84.2M [00:03<00:02, 14.8MB/s] 54%|█████▍    | 45.5M/84.2M [00:03<00:02, 14.4MB/s] 56%|█████▌    | 47.1M/84.2M [00:03<00:02, 14.8MB/s] 58%|█████▊    | 48.8M/84.2M [00:03<00:02, 15.4MB/s] 60%|█████▉    | 50.4M/84.2M [00:03<00:02, 15.8MB/s] 62%|██████▏   | 52.0M/84.2M [00:03<00:02, 15.7MB/s] 64%|██████▎   | 53.6M/84.2M [00:04<00:02, 15.7MB/s] 66%|██████▌   | 55.4M/84.2M [00:04<00:01, 16.1MB/s] 68%|██████▊   | 57.0M/84.2M [00:04<00:01, 16.0MB/s] 70%|██████▉   | 58.6M/84.2M [00:04<00:01, 15.3MB/s] 71%|███████▏  | 60.1M/84.2M [00:04<00:01, 15.3MB/s] 73%|███████▎  | 61.6M/84.2M [00:04<00:01, 15.2MB/s] 75%|███████▌  | 63.2M/84.2M [00:04<00:01, 15.4MB/s] 77%|███████▋  | 64.9M/84.2M [00:04<00:01, 15.7MB/s] 79%|███████▉  | 66.6M/84.2M [00:04<00:01, 16.1MB/s] 81%|████████  | 68.2M/84.2M [00:05<00:01, 15.9MB/s] 83%|████████▎ | 69.9M/84.2M [00:05<00:01, 14.5MB/s] 85%|████████▍ | 71.4M/84.2M [00:05<00:00, 14.4MB/s] 87%|████████▋ | 72.9M/84.2M [00:05<00:00, 14.2MB/s] 88%|████████▊ | 74.2M/84.2M [00:05<00:00, 14.1MB/s] 90%|████████▉ | 75.8M/84.2M [00:05<00:00, 14.2MB/s] 92%|█████████▏| 77.1M/84.2M [00:05<00:00, 13.8MB/s] 93%|█████████▎| 78.5M/84.2M [00:05<00:00, 13.1MB/s] 95%|█████████▍| 79.9M/84.2M [00:06<00:00, 13.3MB/s] 97%|█████████▋| 81.2M/84.2M [00:06<00:00, 13.2MB/s] 98%|█████████▊| 82.6M/84.2M [00:06<00:00, 13.1MB/s]100%|█████████▉| 84.0M/84.2M [00:06<00:00, 13.3MB/s]100%|██████████| 84.2M/84.2M [00:06<00:00, 13.9MB/s]
+[03:11:42] [GPU dinov2-f0-built] alloc=0.10GB reserved=0.12GB total=7.62GB
+[03:11:42] [weights] counts=[3592.0, 4093.0, 2637.0, 2854.0, 7991.0, 70.0]
+[03:11:42] [weights] final =[0.4975, 0.4661, 0.5807, 0.5582, 0.3336, 3.0]
+[03:11:42] [dinov2 FOLD 0] batches/epoch=663 val_batches=397
+[03:11:42] [stage2] DINOv2 FAILED: RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x6 and 384x6)
+[03:11:42] 
+######################################################################
+[03:11:42] # STAGE 3: EfficientNet-B0 (time permitting)
+[03:11:42] ######################################################################
+[03:11:42] 
+[effnet] ====== FOLD 0 / 5 ======
+[03:11:43] ======================================================================
+[03:11:43] [effnet FOLD 0] train=21237 val=12702 bs=32 epochs=12
+Downloading: "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth" to /home/kartik/.cache/torch/hub/checkpoints/efficientnet_b0_rwightman-7f5810bc.pth
+  0%|          | 0.00/20.5M [00:00<?, ?B/s]  1%|          | 256k/20.5M [00:00<00:11, 1.89MB/s]  5%|▍         | 1.00M/20.5M [00:00<00:04, 4.79MB/s] 12%|█▏        | 2.50M/20.5M [00:00<00:02, 9.23MB/s] 20%|█▉        | 4.00M/20.5M [00:00<00:01, 11.3MB/s] 27%|██▋       | 5.50M/20.5M [00:00<00:01, 12.5MB/s] 34%|███▎      | 6.88M/20.5M [00:00<00:01, 13.0MB/s] 40%|████      | 8.25M/20.5M [00:00<00:01, 12.3MB/s] 47%|████▋     | 9.62M/20.5M [00:00<00:00, 12.8MB/s] 54%|█████▍    | 11.1M/20.5M [00:01<00:00, 13.4MB/s] 62%|██████▏   | 12.6M/20.5M [00:01<00:00, 13.9MB/s] 69%|██████▉   | 14.1M/20.5M [00:01<00:00, 14.2MB/s] 76%|███████▌  | 15.5M/20.5M [00:01<00:00, 13.9MB/s] 83%|████████▎ | 17.0M/20.5M [00:01<00:00, 14.3MB/s] 90%|████████▉ | 18.4M/20.5M [00:01<00:00, 12.5MB/s] 98%|█████████▊| 20.0M/20.5M [00:01<00:00, 13.4MB/s]100%|██████████| 20.5M/20.5M [00:01<00:00, 12.5MB/s]
+[03:11:45] [GPU effnet-f0-built] alloc=0.03GB reserved=0.35GB total=7.62GB
+[03:11:45] [weights] counts=[3592.0, 4093.0, 2637.0, 2854.0, 7991.0, 70.0]
+[03:11:45] [weights] final =[0.4975, 0.4661, 0.5807, 0.5582, 0.3336, 3.0]
+[03:11:45] [effnet FOLD 0] backbone frozen for 1 epoch(s)
+[03:11:45] [effnet FOLD 0] batches/epoch=663 val_batches=397
+[03:12:05] [effnet FOLD 0] ep 1/12 b 100/663 loss=0.7699
+[03:12:14] [effnet FOLD 0] ep 1/12 b 200/663 loss=0.5960
+[03:12:22] [effnet FOLD 0] ep 1/12 b 300/663 loss=0.5735
+[03:12:30] [effnet FOLD 0] ep 1/12 b 400/663 loss=0.5380
+[03:12:39] [effnet FOLD 0] ep 1/12 b 500/663 loss=0.4357
+[03:12:47] [effnet FOLD 0] ep 1/12 b 600/663 loss=0.5380
+[03:13:13] [effnet FOLD 0] ep 1/12 loss=0.7178 val_f1=0.5240  <-- BEST
+[03:13:13] [effnet FOLD 0] backbone UNFROZEN at epoch 2
+[03:13:25] [effnet FOLD 0] ep 2/12 b 100/663 loss=0.4137
+[03:13:36] [effnet FOLD 0] ep 2/12 b 200/663 loss=0.5277
+[03:13:47] [effnet FOLD 0] ep 2/12 b 300/663 loss=0.5230
+[03:13:58] [effnet FOLD 0] ep 2/12 b 400/663 loss=0.4482
+[03:14:09] [effnet FOLD 0] ep 2/12 b 500/663 loss=0.5206
+[03:14:21] [effnet FOLD 0] ep 2/12 b 600/663 loss=0.4340
+[03:14:43] [effnet FOLD 0] ep 2/12 loss=0.5129 val_f1=0.5989  <-- BEST
+[03:14:55] [effnet FOLD 0] ep 3/12 b 100/663 loss=0.4359
+[03:15:06] [effnet FOLD 0] ep 3/12 b 200/663 loss=0.5965
+[03:15:17] [effnet FOLD 0] ep 3/12 b 300/663 loss=0.5794
+[03:15:29] [effnet FOLD 0] ep 3/12 b 400/663 loss=0.4418
+[03:15:41] [effnet FOLD 0] ep 3/12 b 500/663 loss=0.4497
+[03:15:53] [effnet FOLD 0] ep 3/12 b 600/663 loss=0.4461
+[03:16:16] [effnet FOLD 0] ep 3/12 loss=0.4739 val_f1=0.7155  <-- BEST
+[03:16:27] [effnet FOLD 0] ep 4/12 b 100/663 loss=0.4135
+[03:16:39] [effnet FOLD 0] ep 4/12 b 200/663 loss=0.4402
+[03:16:50] [effnet FOLD 0] ep 4/12 b 300/663 loss=0.4261
+[03:17:01] [effnet FOLD 0] ep 4/12 b 400/663 loss=0.3762
+[03:17:12] [effnet FOLD 0] ep 4/12 b 500/663 loss=0.4405
+[03:17:24] [effnet FOLD 0] ep 4/12 b 600/663 loss=0.4266
+[03:17:47] [effnet FOLD 0] ep 4/12 loss=0.4517 val_f1=0.6641
+[03:17:59] [effnet FOLD 0] ep 5/12 b 100/663 loss=0.4642
+[03:18:10] [effnet FOLD 0] ep 5/12 b 200/663 loss=0.4404
+[03:18:21] [effnet FOLD 0] ep 5/12 b 300/663 loss=0.4147
+[03:18:33] [effnet FOLD 0] ep 5/12 b 400/663 loss=0.3764
+[03:18:45] [effnet FOLD 0] ep 5/12 b 500/663 loss=0.4399
+[03:18:57] [effnet FOLD 0] ep 5/12 b 600/663 loss=0.4325
+[03:19:20] [effnet FOLD 0] ep 5/12 loss=0.4488 val_f1=0.6129
+[03:19:31] [effnet FOLD 0] ep 6/12 b 100/663 loss=0.5113
+[03:19:43] [effnet FOLD 0] ep 6/12 b 200/663 loss=0.4259
+[03:19:54] [effnet FOLD 0] ep 6/12 b 300/663 loss=0.5490
+[03:20:05] [effnet FOLD 0] ep 6/12 b 400/663 loss=0.4340
+[03:20:17] [effnet FOLD 0] ep 6/12 b 500/663 loss=0.4360
+[03:20:29] [effnet FOLD 0] ep 6/12 b 600/663 loss=0.4108
+[03:20:52] [effnet FOLD 0] ep 6/12 loss=0.4390 val_f1=0.6165
+[03:21:04] [effnet FOLD 0] ep 7/12 b 100/663 loss=0.4029
+[03:21:15] [effnet FOLD 0] ep 7/12 b 200/663 loss=0.4386
+[03:21:26] [effnet FOLD 0] ep 7/12 b 300/663 loss=0.4070
+[03:21:38] [effnet FOLD 0] ep 7/12 b 400/663 loss=0.4626
+[03:21:50] [effnet FOLD 0] ep 7/12 b 500/663 loss=0.4371
+[03:22:01] [effnet FOLD 0] ep 7/12 b 600/663 loss=0.4333
+[03:22:24] [effnet FOLD 0] ep 7/12 loss=0.4361 val_f1=0.7053
+[03:22:35] [effnet FOLD 0] ep 8/12 b 100/663 loss=0.4428
+[03:22:46] [effnet FOLD 0] ep 8/12 b 200/663 loss=0.4464
+[03:22:58] [effnet FOLD 0] ep 8/12 b 300/663 loss=0.4349
+[03:23:09] [effnet FOLD 0] ep 8/12 b 400/663 loss=0.4927
+[03:23:20] [effnet FOLD 0] ep 8/12 b 500/663 loss=0.5050
+[03:23:31] [effnet FOLD 0] ep 8/12 b 600/663 loss=0.4522
+[03:23:54] [effnet FOLD 0] ep 8/12 loss=0.4309 val_f1=0.7081
+[03:24:06] [effnet FOLD 0] ep 9/12 b 100/663 loss=0.4363
+[03:24:17] [effnet FOLD 0] ep 9/12 b 200/663 loss=0.4969
+[03:24:28] [effnet FOLD 0] ep 9/12 b 300/663 loss=0.4305
+[03:24:40] [effnet FOLD 0] ep 9/12 b 400/663 loss=0.4283
+[03:24:52] [effnet FOLD 0] ep 9/12 b 500/663 loss=0.4080
+[03:25:04] [effnet FOLD 0] ep 9/12 b 600/663 loss=0.4454
+[03:25:26] [effnet FOLD 0] ep 9/12 loss=0.4293 val_f1=0.7016
+[03:25:38] [effnet FOLD 0] ep 10/12 b 100/663 loss=0.4340
+[03:25:49] [effnet FOLD 0] ep 10/12 b 200/663 loss=0.4129
+[03:26:00] [effnet FOLD 0] ep 10/12 b 300/663 loss=0.4491
+[03:26:12] [effnet FOLD 0] ep 10/12 b 400/663 loss=0.4221
+[03:26:24] [effnet FOLD 0] ep 10/12 b 500/663 loss=0.4405
+[03:26:36] [effnet FOLD 0] ep 10/12 b 600/663 loss=0.4365
+[03:26:58] [effnet FOLD 0] ep 10/12 loss=0.4263 val_f1=0.7129
+[03:27:10] [effnet FOLD 0] ep 11/12 b 100/663 loss=0.3475
+[03:27:21] [effnet FOLD 0] ep 11/12 b 200/663 loss=0.3457
+[03:27:32] [effnet FOLD 0] ep 11/12 b 300/663 loss=0.4444
+[03:27:44] [effnet FOLD 0] ep 11/12 b 400/663 loss=0.4334
+[03:27:55] [effnet FOLD 0] ep 11/12 b 500/663 loss=0.4323
+[03:28:06] [effnet FOLD 0] ep 11/12 b 600/663 loss=0.4148
+[03:28:29] [effnet FOLD 0] ep 11/12 loss=0.4260 val_f1=0.7128
+[03:28:40] [effnet FOLD 0] ep 12/12 b 100/663 loss=0.4379
+[03:28:52] [effnet FOLD 0] ep 12/12 b 200/663 loss=0.4443
+[03:29:03] [effnet FOLD 0] ep 12/12 b 300/663 loss=0.3635
+[03:29:15] [effnet FOLD 0] ep 12/12 b 400/663 loss=0.4225
+[03:29:27] [effnet FOLD 0] ep 12/12 b 500/663 loss=0.4355
+[03:29:39] [effnet FOLD 0] ep 12/12 b 600/663 loss=0.4349
+[03:30:02] [effnet FOLD 0] ep 12/12 loss=0.4254 val_f1=0.7117
+[03:30:02] [effnet FOLD 0] DONE. best_val_f1=0.7155
+[03:30:02] [effnet] Fold 0 F1 = 0.7155
+[03:30:02] [stage3] EffNet FAILED: AttributeError: 'EfficientNet' object has no attribute 'fc'
+[03:30:02] 
+######################################################################
+[03:30:02] # ENSEMBLE
+[03:30:02] ######################################################################
+[03:30:02]   resnet: mean CV F1 = 0.6380
+[03:30:02]   Keeping for ensemble: ['resnet']
+[03:30:02]   Ensemble weights: {'resnet': 1.0}
+[03:30:02]   Ensemble OOF macro F1 = 0.7103
+[03:30:02] [submit] Wrote ./submission.csv
+==========================================================
+GeoShift — Training Report
+==========================================================
+Device: cuda   Folds: 5   in_ch: 5   classes: 6
+----------------------------------------------------------
+resnet   fold F1s: 0.7437, 0.2984, 0.7307, 0.7484, 0.6686
+         mean=0.6380  std=0.1722
+----------------------------------------------------------
+Ensemble members: ['resnet']
+Ensemble weights: {'resnet': 1.0}
+Ensemble OOF macro F1: 0.7103
+----------------------------------------------------------
+Test predictions distribution:
+  class 0: 2970
+  class 1: 808
+  class 2: 1661
+  class 3: 1667
+  class 4: 1449
+  class 5: 1336
+----------------------------------------------------------
+Submission written to: ./submission.csv
+Total wall clock: 3.50 h
+==========================================================
+[W927 12:32:01.720482579 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
